@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ruang Asa: Ruang Harapan untuk Pendidikan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F0FF;--sf:#FFFFFF;--tx:#1E1B3A;--mu:#6B6890;--ln:#E6E0FA;--p1:#6C3FF0;--p2:#8B5CF6;--pk:#FF5FC4;--or:#FFA63D;--tl:#2EDBB4;--bl:#4BC0F0;--sh:0 10px 30px rgba(108,63,240,.14);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14102B;--sf:#1F1A40;--tx:#F2EFFF;--mu:#A9A4D0;--ln:#352E63;--sh:0 10px 30px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#14102B;--sf:#1F1A40;--tx:#F2EFFF;--mu:#A9A4D0;--ln:#352E63;--sh:0 10px 30px rgba(0,0,0,.35)}
+html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--sf);z-index:60}
+h1,h2,h3{line-height:1.15;margin:0;letter-spacing:-.02em}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.sub{color:var(--mu);max-width:56ch;margin:10px 0 28px}
+.btn{border:0;border-radius:999px;padding:13px 24px;font-weight:700;cursor:pointer;background:linear-gradient(135deg,var(--pk),var(--p2));color:#fff;box-shadow:0 8px 20px rgba(255,95,196,.35);transition:transform .2s;text-decoration:none;display:inline-block;min-height:44px}
+.btn:hover{transform:translateY(-2px) scale(1.03)}
+.btn.or{background:linear-gradient(135deg,var(--or),#FF7A59);box-shadow:0 8px 20px rgba(255,166,61,.4)}
+.btn.gh{background:rgba(255,255,255,.16);box-shadow:none;border:1.5px solid rgba(255,255,255,.5)}
+.card{background:var(--sf);border-radius:24px;padding:22px;box-shadow:var(--sh)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--sf);box-shadow:0 2px 14px rgba(108,63,240,.1)}
+nav .w{display:flex;align-items:center;gap:18px;height:64px}
+.logo{font-weight:800;font-size:1.25rem;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo i{width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,var(--pk),var(--p1));display:grid;place-items:center;color:#fff;font-style:normal;font-size:.95rem}
+nav .ls{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+nav .ls a{padding:8px 12px;border-radius:999px;text-decoration:none;font-weight:600;font-size:.9rem;color:var(--mu);white-space:nowrap}
+nav .ls a:hover{background:var(--bg);color:var(--p1)}
+.hero{background:linear-gradient(160deg,#5B2FE0,#8B5CF6 60%,#B06BFF);color:#fff;position:relative;overflow:hidden;padding:64px 0 90px;border-radius:0 0 48px 48px}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(2.1rem,5vw,3.6rem);font-weight:800}
+.hero p{font-size:1.1rem;color:#E9E0FF;max-width:48ch;margin:16px 0 26px}
+.bl{position:absolute;border-radius:50%;background:rgba(255,255,255,.1);animation:fl 8s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-22px) translateX(10px)}}
+.stats{display:flex;gap:26px;margin-top:34px;flex-wrap:wrap}
+.stats b{display:block;font-size:1.7rem;font-weight:800}
+.stats span{font-size:.82rem;color:#D9CCFF}
+.ph{width:min(300px,100%);margin:0 auto;background:var(--sf);color:var(--tx);border-radius:36px;padding:20px;box-shadow:0 30px 60px rgba(30,10,90,.4);position:relative;animation:fl 6s ease-in-out infinite}
+.ph .cl{background:linear-gradient(135deg,var(--p1),var(--p2));border-radius:20px;padding:16px;color:#fff;margin:12px 0}
+.ph .cl b{font-size:1.5rem;display:block}
+.bar{height:10px;border-radius:9px;background:var(--ln);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:9px;background:linear-gradient(90deg,var(--pk),var(--p2),var(--bl));width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.tag{position:absolute;background:var(--sf);color:var(--tx);border-radius:14px;padding:8px 12px;font-size:.78rem;font-weight:700;box-shadow:var(--sh);animation:fl 5s ease-in-out infinite}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.ic{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:1.6rem;margin-bottom:12px;box-shadow:0 8px 16px rgba(0,0,0,.12)}
+.pk{background:linear-gradient(135deg,#FF8FD8,var(--pk))}.or{background:linear-gradient(135deg,#FFC46B,var(--or))}.tl{background:linear-gradient(135deg,#7BF0D5,var(--tl))}
+.pc{cursor:pointer;border:2px solid transparent;text-align:left;transition:transform .25s,border-color .25s}
+.pc:hover,.pc[aria-pressed="true"]{transform:translateY(-6px);border-color:var(--p2)}
+.dt{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.dt ul{margin:8px 0 0;padding-left:20px;color:var(--mu)}
+.chip{display:inline-block;padding:5px 12px;border-radius:999px;background:var(--bg);font-size:.82rem;font-weight:600;margin:3px 3px 3px 0}
+.tg{display:inline-flex;background:var(--sf);border-radius:999px;padding:5px;box-shadow:var(--sh);margin-bottom:22px}
+.tg button{border:0;background:none;padding:10px 22px;border-radius:999px;font-weight:700;cursor:pointer;color:var(--mu);min-height:44px}
+.tg button[aria-pressed="true"]{background:linear-gradient(135deg,var(--pk),var(--p2));color:#fff}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;counter-reset:s}
+.st .card{padding:18px;position:relative;counter-increment:s}
+.st .card::before{content:counter(s);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--p1);color:#fff;font-weight:800;font-size:.85rem;margin-bottom:10px}
+.st h3{font-size:.98rem}.st p{margin:6px 0 0;color:var(--mu);font-size:.86rem}
+.jd{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pnl{background:linear-gradient(160deg,#5B2FE0,#8B5CF6);color:#fff;border-radius:28px;padding:24px}
+.tl2{list-style:none;margin:18px 0 0;padding:0}
+.tl2 li{display:flex;gap:14px;padding-bottom:18px;position:relative;opacity:.5;transition:opacity .5s}
+.tl2 li::before{content:"";position:absolute;left:13px;top:28px;bottom:0;width:2px;background:rgba(255,255,255,.3)}
+.tl2 li:last-child::before{display:none}
+.tl2 i{width:28px;height:28px;border-radius:50%;border:3px solid var(--or);flex:none;display:grid;place-items:center;font-style:normal;font-size:.8rem;transition:all .4s}
+.tl2 li.on{opacity:1}.tl2 li.on i{background:var(--tl);border-color:var(--tl);color:#14102B;transform:scale(1.12)}
+.tl2 small{display:block;color:#D9CCFF}
+.qr{width:84px;height:84px;background:#fff;border-radius:14px;padding:8px;flex:none}
+.vc{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.14);border-radius:18px;padding:12px 14px;margin-top:6px}
+.fm{display:grid;gap:14px}
+.fm label{font-weight:700;font-size:.9rem;display:grid;gap:6px}
+.fm input,.fm select,.fm textarea{border:2px solid var(--ln);background:var(--bg);border-radius:14px;padding:12px 14px;width:100%;min-height:46px}
+.fm input:focus,.fm select:focus,.fm textarea:focus{border-color:var(--p2);outline:none}
+.nm{display:flex;gap:8px;flex-wrap:wrap}
+.nm button{border:2px solid var(--ln);background:var(--bg);border-radius:999px;padding:9px 16px;font-weight:700;cursor:pointer;min-height:44px}
+.nm button[aria-pressed="true"]{background:var(--p1);color:#fff;border-color:var(--p1)}
+.rs{background:linear-gradient(135deg,rgba(46,219,180,.18),rgba(75,192,240,.18));border-radius:18px;padding:16px;display:none;animation:pop .5s}
+.rs.show{display:block}
+@keyframes pop{from{transform:scale(.94);opacity:0}}
+.note{font-size:.82rem;color:var(--mu)}
+.fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.fl button{border:0;border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer;background:var(--sf);box-shadow:var(--sh);min-height:44px}
+.fl button[aria-pressed="true"]{background:var(--p1);color:#fff}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.ci{display:flex;gap:14px;align-items:flex-start}
+.ci .ic{margin:0;flex:none}
+.ci h3{font-size:1rem}.ci .bar{margin:10px 0 6px}
+.ci small{color:var(--mu)}
+.sm{padding:6px 14px;min-height:36px;font-size:.85rem;margin-top:8px}
+.dg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:16px}
+.dg b{font-size:1.7rem;font-weight:800;color:var(--p1);display:block}
+.rw{display:grid;grid-template-columns:130px 1fr 48px;gap:12px;align-items:center;margin:10px 0;font-size:.9rem}
+.mg{display:flex;flex-wrap:wrap;gap:10px}
+.mg span{background:var(--sf);box-shadow:var(--sh);border-radius:16px;padding:12px 18px;font-weight:700;transition:transform .25s}
+.mg span:hover{transform:translateY(-4px) rotate(-1.5deg)}
+.mg small{display:block;font-weight:500;color:var(--mu)}
+details{background:var(--sf);border-radius:18px;padding:16px 20px;margin-bottom:10px;box-shadow:var(--sh)}
+summary{font-weight:700;cursor:pointer}
+details p{margin:10px 0 0;color:var(--mu)}
+footer{background:linear-gradient(160deg,#4A22C4,#6C3FF0);color:#E9E0FF;padding:46px 0;border-radius:48px 48px 0 0;margin-top:40px}
+footer h2{color:#fff}
+footer p{max-width:70ch;font-size:.88rem}
+@media(max-width:820px){.hero .w,.jd,.dt{grid-template-columns:1fr}.pg{grid-template-columns:1fr}.dg{grid-template-columns:1fr 1fr}.hero{padding-top:40px}.rw{grid-template-columns:90px 1fr 44px}section{padding:52px 0}nav .logo span{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="w"><a class="logo" href="#top"><i>✦</i><span>Ruang Asa</span></a>
+<div class="ls"><a href="#program">Program</a><a href="#alur">Cara kerja</a><a href="#jejak">Dompet Asa</a><a href="#donasi">Beri</a><a href="#bantuan">Minta bantuan</a><a href="#katalog">Katalog</a><a href="#dampak">Dampak</a><a href="#faq">Tanya jawab</a></div></div></nav>
+
+<header class="hero" id="top">
+<div class="bl" style="width:120px;height:120px;top:30px;left:-30px"></div><div class="bl" style="width:70px;height:70px;top:120px;right:12%;animation-delay:-3s"></div><div class="bl" style="width:180px;height:180px;bottom:-60px;left:40%;animation-delay:-5s"></div>
+<div class="w"><div>
+<h1>Ruang harapan untuk pendidikan yang amanah dan berdampak</h1>
+<p>Ruang Asa mempertemukan orang yang ingin memberi dengan siswa, mahasiswa, dan sekolah yang membutuhkan. Setiap rupiah bisa dilacak sampai ke bangku kelas.</p>
+<a class="btn or" href="#donasi">Saya ingin memberi</a> <a class="btn gh" href="#bantuan">Saya butuh bantuan</a>
+<div class="stats"><div><b data-n="3840" data-s="+">0</b><span>penerima manfaat (contoh)</span></div><div><b data-n="95" data-s="%">0</b><span>dana tersalur (contoh)</span></div><div><b data-n="126" data-s="">0</b><span>sekolah dan kampus mitra (contoh)</span></div></div>
+</div>
+<div style="position:relative;padding:20px 0"><div class="ph">
+<div style="font-size:.85rem;color:var(--mu)">Hai, Sahabat Asa</div><h3 style="font-size:1.2rem">Dompet Asa</h3>
+<div class="cl"><small>Beasiswa Asa · semester ini</small><b>Rp 2.500.000</b><div class="bar" style="margin-top:10px;background:rgba(255,255,255,.25)"><i id="hb"></i></div><small id="ht">0% tersalur</small></div>
+<div style="display:flex;gap:10px"><div class="ic pk" style="width:44px;height:44px;margin:0;font-size:1.2rem">🎓</div><div class="ic or" style="width:44px;height:44px;margin:0;font-size:1.2rem">🏫</div><div class="ic tl" style="width:44px;height:44px;margin:0;font-size:1.2rem">🚀</div></div>
+</div>
+<div class="tag" style="top:0;left:-6px">✓ Dana diterima</div><div class="tag" style="bottom:30px;right:-8px;animation-delay:-2s">📍 Nota terverifikasi</div></div>
+</div></header>
+
+<section id="program"><div class="w"><h2>Tiga program, satu tujuan</h2><p class="sub">Pilih kartu untuk melihat isi dan sumber dananya.</p>
+<div class="pg" id="pg"></div>
+<div class="card dt" id="dt" aria-live="polite"></div></div></section>
+
+<section id="alur" style="padding-top:20px"><div class="w"><h2>Cara kerja Ruang Asa</h2><p class="sub">Terbuka untuk masyarakat umum, tanpa batas usia minimal. Syarat usia mengikuti ketentuan instansi pendidikan atau program.</p>
+<div class="tg" role="group" aria-label="Pilih peran"><button aria-pressed="true" data-r="d">Donatur</button><button aria-pressed="false" data-r="p">Penerima bantuan</button></div>
+<div class="st" id="st"></div></div></section>
+
+<section id="jejak"><div class="w"><h2>Dompet Asa: lihat perjalanan dana</h2><p class="sub">Dana tidak dikirim tunai. Dana menjadi voucher QR yang hanya bisa dipakai di sekolah, kampus, atau toko mitra. Coba simulasinya.</p>
+<div class="jd"><div class="pnl"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><div><small>ID donasi</small><div style="font-weight:800;font-size:1.2rem" id="jid">RA-2026-00481</div></div><div style="text-align:right"><small>Nominal</small><div style="font-weight:800;font-size:1.2rem" id="jam">Rp 2.500.000</div></div></div>
+<ol class="tl2" id="tl"></ol><div class="bar" style="background:rgba(255,255,255,.25)"><i id="jb"></i></div>
+<div class="vc"><svg class="qr" viewBox="0 0 8 8" shape-rendering="crispEdges" role="img" aria-label="Kode QR voucher"><path fill="#1E1B3A" d="M0 0h3v3H0zM5 0h3v3H5zM0 5h3v3H0zM4 0h1v1H4zM3 3h1v2H3zM5 4h2v1H5zM4 5h1v2H4zM6 6h2v2H6zM0 4h2v1H0z"/><path fill="#fff" d="M1 1h1v1H1zM6 1h1v1H6zM1 6h1v1H1z"/></svg><div><b>Voucher QR</b><br><small>Hanya berlaku di mitra pendidikan</small></div></div>
+<button class="btn or sm" id="sim" style="margin-top:14px">Putar ulang simulasi</button></div>
+<div class="card"><h3>Pencairan bertahap untuk kegiatan mahasiswa</h3><p class="sub" style="margin-bottom:14px">Dana cair per tahap setelah bukti dan laporan diterima.</p>
+<div class="rw"><span>Tahap 1 · 40%</span><div class="bar"><i data-w="100"></i></div><b>Cair</b></div>
+<div class="rw"><span>Tahap 2 · 40%</span><div class="bar"><i data-w="65"></i></div><b>Proses</b></div>
+<div class="rw"><span>Tahap 3 · 20%</span><div class="bar"><i data-w="0"></i></div><b>Menunggu</b></div>
+<p class="note">Syarat tiap tahap: foto bergeotag, nota, daftar peserta, dan laporan dampak. Ini contoh pembagian, bisa disesuaikan per program.</p>
+<h3 style="margin-top:18px">Perlindungan data anak</h3><p class="note">Identitas dan foto anak disamarkan di tampilan publik. Dana untuk anak disalurkan lewat sekolah, wali, atau vendor mitra, bukan ke akun pribadi.</p></div></div></div></section>
+
+<section id="donasi" style="padding-top:20px"><div class="w"><div class="card" style="max-width:640px;margin:0 auto"><h2 style="font-size:1.6rem">Beri untuk pendidikan</h2><p class="sub">Pilih program, jenis dana, dan nominal.</p>
+<form class="fm" id="fd">
+<label>Program<select id="dp"><option value="Beasiswa Asa">Beasiswa Asa</option><option value="Asa Sekolah">Asa Sekolah (kebutuhan dan operasional)</option><option value="Asa Berdampak">Asa Berdampak (kegiatan mahasiswa)</option></select></label>
+<label>Jenis dana<select id="dj"><option>Donasi</option><option>Infak</option><option>Sedekah</option><option>Wakaf produktif</option><option>Zakat</option></select></label>
+<div><b style="font-size:.9rem">Nominal</b><div class="nm" id="nm" style="margin-top:6px"></div></div>
+<label>Nominal lain (Rp)<input id="dn" type="number" min="10000" step="1000" placeholder="Contoh: 75000"></label>
+<label>Frekuensi<select id="df"><option>Sekali</option><option>Bulanan (beasiswa berkelanjutan)</option></select></label>
+<button class="btn" type="submit">Beri sekarang</button></form>
+<div class="rs" id="dr" role="status" tabindex="-1"></div></div></div></section>
+
+<section id="bantuan" style="padding-top:20px"><div class="w"><div class="card" style="max-width:640px;margin:0 auto"><h2 style="font-size:1.6rem">Ajukan bantuan</h2><p class="sub">Untuk siswa, mahasiswa, sekolah, pesantren, kampus, dan organisasi mahasiswa.</p>
+<form class="fm" id="fb">
+<label>Nama pengaju<input id="bn" required placeholder="Nama lengkap atau nama lembaga"></label>
+<label>Usia (tahun)<input id="bu" type="number" min="0" max="120" required placeholder="Isi usia pengaju"></label>
+<label>Instansi pendidikan<input id="bi" required placeholder="Nama sekolah, kampus, atau organisasi"></label>
+<label>Jenis bantuan<select id="bj"><option>Beasiswa Asa</option><option>Asa Sekolah (kebutuhan dan operasional)</option><option>Asa Berdampak (proposal kegiatan mahasiswa)</option></select></label>
+<label>Kebutuhan<textarea id="bk" rows="3" required placeholder="Ceritakan kebutuhan Anda dan perkiraan biayanya"></textarea></label>
+<button class="btn" type="submit">Kirim pengajuan</button></form>
+<div class="rs" id="br" role="status" tabindex="-1"></div></div></div></section>
+
+<section id="katalog"><div class="w"><h2>Program yang sedang berjalan</h2><p class="sub">Data berikut contoh ilustrasi. Pilih Danai untuk langsung mengisi formulir pemberian.</p>
+<div class="fl" id="fl" role="group" aria-label="Filter program"></div><div class="cg" id="cg"></div></div></section>
+
+<section id="dampak" style="padding-top:20px"><div class="w"><h2>Dasbor dampak</h2><p class="sub">Donatur melihat ke mana dana pergi dan apa hasilnya (angka contoh).</p>
+<div class="dg"><div class="card"><b data-n="3840" data-s="">0</b>penerima manfaat</div><div class="card"><b data-n="126" data-s="">0</b>instansi mitra</div><div class="card"><b data-n="412" data-s="">0</b>kegiatan mahasiswa</div><div class="card"><b data-n="95" data-s="%">0</b>dana tersalur</div></div>
+<div class="card"><h3>Penyaluran per program</h3>
+<div class="rw"><span>Beasiswa Asa</span><div class="bar"><i data-w="48"></i></div><b>48%</b></div>
+<div class="rw"><span>Asa Sekolah</span><div class="bar"><i data-w="32"></i></div><b>32%</b></div>
+<div class="rw"><span>Asa Berdampak</span><div class="bar"><i data-w="20"></i></div><b>20%</b></div></div></div></section>
+
+<section style="padding-top:20px"><div class="w"><h2>Bekerja bersama</h2><p class="sub">Setiap mitra punya peran yang jelas.</p>
+<div class="mg"><span>BAZNAS dan LAZ<small>zakat dan wakaf resmi</small></span><span>Sekolah dan kampus<small>verifikasi dan penerima</small></span><span>Organisasi mahasiswa<small>kegiatan berdampak</small></span><span>Perusahaan<small>CSR dan sponsor</small></span><span>Bank syariah dan e-wallet<small>pembayaran aman</small></span><span>Toko mitra<small>menerima voucher QR</small></span><span>Pemerintah<small>izin dan kepatuhan</small></span><span>Relawan lokal<small>survei lapangan</small></span><span>Auditor independen<small>laporan terbuka</small></span></div></div></section>
+
+<section id="faq" style="padding-top:20px"><div class="w" style="max-width:760px"><h2 style="margin-bottom:18px">Pertanyaan yang sering muncul</h2>
+<details><summary>Siapa saja yang boleh mendaftar?</summary><p>Siapa saja. Tidak ada batas usia minimal di Ruang Asa, dan syarat usia mengikuti ketentuan instansi pendidikan atau program. Pengguna di bawah 18 tahun didampingi orang tua atau wali, atau didaftarkan lewat sekolah.</p></details>
+<details><summary>Bagaimana uang saya dipastikan tepat sasaran?</summary><p>Dana menjadi voucher QR yang hanya bisa dipakai di sekolah, kampus, atau toko mitra. Penerima diverifikasi lewat dokumen, e-KYC, dan survei guru atau relawan.</p></details>
+<details><summary>Bagaimana dengan zakat?</summary><p>Zakat hanya disalurkan lewat lembaga amil resmi (BAZNAS atau LAZ) dan dicatat terpisah dari donasi umum.</p></details>
+<details><summary>Ruang Asa mengambil biaya berapa?</summary><p>Pada konsep ini, biaya administrasi contohnya 5% dan ditampilkan terbuka sebelum Anda memberi. Persentase final mengikuti aturan tiap jenis dana.</p></details>
+<details><summary>Apakah data anak aman?</summary><p>Identitas dan foto anak disamarkan di tampilan publik, dan penyaluran dana lewat sekolah, wali, atau vendor mitra.</p></details></div></section>
+
+<footer><div class="w"><h2>Ruang Asa</h2><p style="font-weight:700;font-size:1.05rem">Harapan yang tersalur, dampak yang terlacak.</p>
+<p>Website ini adalah prototipe konsep tugas Kewirausahaan Syariah (strategi Amati, Tiru, Modifikasi). Semua angka, nama program, dan transaksi adalah contoh ilustrasi. Pada usaha nyata diperlukan izin pengumpulan dana, kerja sama dengan lembaga amil resmi, dan kepatuhan pada aturan pelindungan data pribadi.</p></div></footer>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],rp=n=>'Rp '+new Intl.NumberFormat('id-ID').format(n);
+const P=[{k:'Beasiswa Asa',e:'🎓',c:'pk',t:'UKT atau SPP, biaya hidup, dan beasiswa bulanan sampai lulus.',s:['Donasi','Infak','Sedekah','Wakaf produktif'],l:['Beasiswa penuh atau sebagian','Pencairan bulanan selama syarat terpenuhi','Dana abadi dari wakaf produktif']},
+{k:'Asa Sekolah',e:'🏫',c:'or',t:'Kebutuhan siswa dan operasional sekolah, pesantren, TPQ, dan kampus daerah.',s:['Donasi','Infak','Sedekah','Wakaf','CSR'],l:['Buku, seragam, laptop, kuota, transportasi','Perbaikan kelas, perpustakaan, internet, alat praktik','Honor guru honorer']},
+{k:'Asa Berdampak',e:'🚀',c:'tl',t:'Kegiatan mahasiswa yang bermanfaat bagi masyarakat.',s:['Donasi','CSR','Sponsor','Hibah'],l:['Pengabdian desa dan kelas literasi','Riset terapan dan usaha sosial','Dana cair bertahap dan laporan dampak wajib']}];
+$('#pg').innerHTML=P.map((p,i)=>`<button class="card pc" aria-pressed="${i==0}" data-i="${i}"><div class="ic ${p.c}">${p.e}</div><h3>${p.k}</h3><p style="color:var(--mu);margin:8px 0 0">${p.t}</p></button>`).join('');
+function showP(i){const p=P[i];$('#dt').innerHTML=`<div><h3>Isi program</h3><ul>${p.l.map(x=>`<li>${x}</li>`).join('')}</ul></div><div><h3>Sumber dana</h3><div style="margin-top:8px">${p.s.map(x=>`<span class="chip">${x}</span>`).join('')}</div><p class="note">Zakat hanya lewat lembaga amil resmi (BAZNAS atau LAZ).</p></div>`;$$('.pc').forEach((b,j)=>b.setAttribute('aria-pressed',j==i))}
+$('#pg').onclick=e=>{const b=e.target.closest('.pc');if(b)showP(+b.dataset.i)};showP(0);
+const R={d:[['Daftar','Buat akun dan verifikasi.'],['Pilih program','Beasiswa, sekolah, atau kegiatan.'],['Pilih jenis dana','Donasi, infak, sedekah, atau wakaf.'],['Bayar','E-wallet, transfer, atau QRIS.'],['Dana masuk Dompet Asa','Tercatat dengan ID donasi.'],['Pantau dampak','Lihat nota, bukti, dan laporan.'],['Lanjutkan','Jadikan beasiswa bulanan.']],
+p:[['Daftar','Didampingi wali atau sekolah bila di bawah 18 tahun.'],['Lengkapi data','Identitas, instansi, dan dokumen.'],['Pilih bantuan','Beasiswa, kebutuhan, atau kegiatan.'],['Verifikasi','Dokumen, e-KYC, survei guru atau relawan.'],['Disetujui dan tayang','Donatur bisa mendanai.'],['Dana cair','Voucher QR atau bertahap.'],['Unggah laporan','Nota, foto bergeotag, dampak.']]};
+function role(r){$('#st').innerHTML=R[r].map(x=>`<div class="card"><h3>${x[0]}</h3><p>${x[1]}</p></div>`).join('');$$('.tg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.r==r))}
+$('.tg').onclick=e=>{const b=e.target.closest('button');if(b)role(b.dataset.r)};role('d');
+const J=[['Dana diterima','via QRIS'],['Dicairkan ke penerima','rekening terverifikasi e-KYC'],['Dibelanjakan untuk kebutuhan','nota dan lokasi terverifikasi'],['Penerima belajar','laporan perkembangan menyusul']];
+$('#tl').innerHTML=J.map((x,i)=>`<li><i>${i+1}</i><div><b>${x[0]}</b><small>${x[1]}</small></div></li>`).join('');
+let tm=[];function sim(){tm.forEach(clearTimeout);tm=[];const li=$$('#tl li');li.forEach(l=>{l.classList.remove('on');l.querySelector('i').textContent=l.querySelector('i').textContent});$('#jb').style.width='0';li.forEach((l,i)=>tm.push(setTimeout(()=>{l.classList.add('on');l.querySelector('i').textContent='✓';$('#jb').style.width=(i+1)*25+'%'},700*(i+1))))}
+$('#sim').onclick=()=>{$$('#tl i').forEach((x,i)=>x.textContent=i+1);sim()};
+const AM=[50000,100000,250000,500000];let nom=100000;
+$('#nm').innerHTML=AM.map(a=>`<button type="button" aria-pressed="${a==nom}" data-a="${a}">${rp(a)}</button>`).join('');
+$('#nm').onclick=e=>{const b=e.target.closest('button');if(!b)return;nom=+b.dataset.a;$('#dn').value='';$$('#nm button').forEach(x=>x.setAttribute('aria-pressed',x===b))};
+$('#dn').oninput=e=>{if(e.target.value){nom=+e.target.value;$$('#nm button').forEach(x=>x.setAttribute('aria-pressed',false))}};
+$('#fd').onsubmit=e=>{e.preventDefault();if(!nom||nom<10000){$('#dr').className='rs show';$('#dr').textContent='Nominal minimal Rp 10.000. Pilih nominal atau isi nominal lain.';return}
+const z=$('#dj').value==='Zakat',id='RA-2026-'+String(Math.floor(Math.random()*90000)+10000),adm=z?0:Math.round(nom*.05);
+$('#dr').className='rs show';$('#dr').innerHTML=`<b>Terima kasih, semoga menjadi amal baik.</b><br>ID donasi: <b>${id}</b><br>${$('#dp').value} · ${$('#dj').value} · ${$('#df').value}<br>Nominal ${rp(nom)}${z?'':` · biaya administrasi contoh 5% (${rp(adm)}) · tersalur ${rp(nom-adm)}`}<br><span class="note">${z?'Zakat disalurkan lewat BAZNAS atau LAZ mitra. Hak amil mengikuti ketentuan lembaga tersebut.':'Ini simulasi, tidak ada pembayaran sungguhan.'} Lihat perjalanan dananya di Dompet Asa.</span>`;
+$('#jid').textContent=id;$('#jam').textContent=rp(nom-adm);sim();$('#dr').focus();$('#jejak').scrollIntoView({behavior:'smooth'})};
+$('#fb').onsubmit=e=>{e.preventDefault();const u=+$('#bu').value,m=u<18?'Karena usia di bawah 18 tahun, pengajuan perlu didampingi orang tua, wali, atau sekolah. Dana nanti disalurkan lewat sekolah, wali, atau vendor mitra.':'Syarat usia akhir mengikuti ketentuan instansi atau program yang dipilih.';
+$('#br').className='rs show';$('#br').innerHTML=`<b>Pengajuan diterima, ${$('#bn').value}.</b><br>Status: <b>Menunggu verifikasi</b> (dokumen, e-KYC, survei guru atau relawan) → Disetujui dan tayang → Dana cair sebagai voucher QR.<br><span class="note">${m} Ini simulasi tanpa penyimpanan data.</span>`;$('#br').focus()};
+const C=[['Beasiswa UKT semester 3','Beasiswa Asa','🎓','pk',7500000,5250000],['Perpustakaan madrasah desa','Asa Sekolah','🏫','or',20000000,8400000],['Kelas literasi desa oleh mahasiswa','Asa Berdampak','🚀','tl',6000000,4500000],['Paket seragam dan buku SD','Asa Sekolah','🏫','or',3000000,2700000],['Beasiswa santri berprestasi','Beasiswa Asa','🎓','pk',12000000,3600000],['Riset air bersih desa binaan','Asa Berdampak','🚀','tl',9000000,2250000]];
+let ft='Semua';function cat(){$('#fl').innerHTML=['Semua',...P.map(p=>p.k)].map(k=>`<button aria-pressed="${k==ft}" data-k="${k}">${k}</button>`).join('');
+$('#cg').innerHTML=C.filter(c=>ft=='Semua'||c[1]==ft).map(c=>{const w=Math.round(c[5]/c[4]*100);return`<div class="card ci"><div class="ic ${c[3]}">${c[2]}</div><div style="flex:1"><h3>${c[0]}</h3><small>${c[1]}</small><div class="bar"><i data-w="${w}"></i></div><small>${rp(c[5])} dari ${rp(c[4])} (${w}%)</small><br><button class="btn sm" data-p="${c[1]}">Danai</button></div></div>`}).join('');anim()}
+$('#fl').onclick=e=>{const b=e.target.closest('button');if(b){ft=b.dataset.k;cat()}};
+$('#cg').onclick=e=>{const b=e.target.closest('[data-p]');if(b){$('#dp').value=b.dataset.p;$('#donasi').scrollIntoView({behavior:'smooth'})}};
+function anim(){$$('.bar i[data-w]').forEach(i=>requestAnimationFrame(()=>i.style.width=i.dataset.w+'%'))}
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){const el=x.target;io.unobserve(el);if(el.dataset.n){const n=+el.dataset.n,t=performance.now();(function f(now){const p=Math.min((now-t)/1400,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3))).toLocaleString('id-ID')+el.dataset.s;if(p<1)requestAnimationFrame(f)})(t)}else{el.style.width=el.dataset.w+'%'}}}),{threshold:.3});
+$$('[data-n]').forEach(x=>io.observe(x));$$('.rw .bar i[data-w]').forEach(x=>io.observe(x));
+cat();setTimeout(()=>{$('#hb').style.width='72%';$('#ht').textContent='72% tersalur';sim()},600);
+</script>
+</body>
+</html>
